@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartQuery</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="smartquery-container">
+    <div class="input-row">
+      <textarea id="smartquery-input" placeholder="Enter your search query..."></textarea>
+      <button id="smartquery-go">Query</button>
+    </div>
+
+    <p id="smartquery-output" aria-live="polite"></p>
+
+    <div style="display: flex; gap: 8px; margin-top: 8px;">
+      <button id="copy-btn" style="flex: 1; padding: 6px 12px; border-radius: 6px; border: none; background: #00ff88; color: #0a0a0a; cursor: pointer; font-weight: bold;">
+        Copy Query
+      </button>
+      <button id="open-btn" style="flex: 1; padding: 6px 12px; border-radius: 6px; border: none; background: #007f55; color: #eee; cursor: pointer; font-weight: bold;">
+        Search Google
+      </button>
+    </div>
+
+    <details class="dropdown">
+      <summary>Filter Types ⌄</summary>
+      <div class="filters">
+        <fieldset>
+          <legend>File Types</legend>
+          <label><input type="checkbox" name="filetype" value="pdf" id="pdf-filter"> PDF</label>
+          <label><input type="checkbox" name="filetype" value="docx"> DOCX</label>
+          <label><input type="checkbox" name="filetype" value="pptx"> PPTX</label>
+          <label><input type="checkbox" name="filetype" value="txt"> TXT</label>
+          <label><input type="checkbox" name="filetype" value="zip"> ZIP</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sites (comma separated domains)</legend>
+          <input 
+            type="text" 
+            id="site-input" 
+            class="site-input"
+            placeholder="example.org" 
+          />
+        </fieldset>
+      </div>
+    </details>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
