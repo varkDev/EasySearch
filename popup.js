@@ -30,14 +30,12 @@ document.getElementById('smartquery-go').addEventListener('click', () => {
   document.getElementById('smartquery-output').innerText = finalQuery;
 });
 
-// Copy button: silently copy to clipboard
 document.getElementById('copy-btn').addEventListener('click', () => {
   const outputText = document.getElementById('smartquery-output').innerText;
   if (!outputText) return;
   navigator.clipboard.writeText(outputText).catch(() => {});
 });
 
-// Open Google search in new tab
 document.getElementById('open-btn').addEventListener('click', () => {
   const query = document.getElementById('smartquery-output').innerText;
   if (!query) return;
